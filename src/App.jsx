@@ -10,7 +10,7 @@ import {
     TableHeaderCell,
     TableRow
 } from "semantic-ui-react";
-import * as allCitiesJson from './some-indian-city-list.json';
+import allCitiesJson from './some-indian-city-list.json';
 
 import img from './weather-forecast/dashboard.png';
 import * as img01n from './weather-forecast/01n.png';
@@ -87,7 +87,7 @@ const App = function () {
 
 
     const fetchData = async () => {
-      await fetch(`${process.env.REACT_APP_API_URL}/onecall?lat=${lat}&lon=${long}&exclude=current,hourly,minutely,alerts&appid=d22f348db456da7db5ef308d89d5b2c4`)
+      await fetch(`${process.env.REACT_APP_API_URL}/onecall?lat=${lat}&lon=${long}&exclude=current,hourly,minutely,alerts&appid=7f988146f66fa2af6a37732fbfc6ff28`)
           .then(res => res.json())
           .then(result => {
             setData(result)

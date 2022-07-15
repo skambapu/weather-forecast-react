@@ -10,7 +10,6 @@ import {
     TableHeaderCell,
     TableRow
 } from "semantic-ui-react";
-import allCitiesJson from './some-indian-city-list.json';
 
 import img from './weather-forecast/dashboard.png';
 import * as img01n from './weather-forecast/01n.png';
@@ -34,6 +33,7 @@ import * as img13d from './weather-forecast/13d.png';
 import * as img50d from './weather-forecast/50d.png';
 
 import moment from "moment";
+import {citiesJson} from "./helper.js";
 
 const App = function () {
 
@@ -59,7 +59,7 @@ const App = function () {
 
 
     useEffect(()=> {
-        const arr = allCitiesJson.cities
+        const arr = citiesJson.cities
         console.log(arr.length)
         setRandomCitiesData(getMultipleRandom(arr, 10))
         const cityOpts = []
@@ -163,7 +163,8 @@ const App = function () {
 
               <Table>
                   <TableRow style={{ border: 'solid 1px' }} >
-                      <TableCell width={12} style={{ border: 'solid 1px', margin: '20px 20px 20px 20px', height: '500px', width: '283px', backgroundColor: 'cornflowerblue'}} >
+                      <TableCell width={12} style={{ color:'white', border: 'solid 1px',
+                          margin: '20px 20px 20px 20px', height: '500px', width: '283px', backgroundColor: '#007bff', fontSize: 'xx-large'}} >
                           {days[moment().day()]}
                           <div>
                               <img src={getImage(data.daily && data.daily[0].weather[0].icon)} style={{width: '100px'}}/>
@@ -230,8 +231,8 @@ const App = function () {
                       </TableHeaderCell>
                   </TableHeader>
                   <TableBody>
-                      <TableRow style={{width:'100%'}}>
-                          <TableCell >
+                      <TableRow style={{width:'100%', color:'cornflowerblue'}}>
+                          <TableCell style={{color:'cornflowerblue', padding: '0px 80px 0px 80px'}}>
                               <div>
                                   <img src={getImage(data.daily && data.daily[1].weather[0].icon)} style={{width: '100px'}}/>
                               </div>
